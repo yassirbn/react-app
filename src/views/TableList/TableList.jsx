@@ -22,7 +22,11 @@ class RegularTables extends React.Component {
   }
   getAll() {
 
-    axios.get("http://localhost:3002/users/all").then(item => {
+    axios.get("http://localhost:3002/users/all",{
+      headers:{
+          "Content-Type":"application/json",
+      "x-access-token":localStorage.getItem("token")}
+    }).then(item => {
 
 
       console.log(item.data.data);

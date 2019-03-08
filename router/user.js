@@ -16,7 +16,7 @@ router.get('/',function(req,res){
 })
 
 
-router.get('/all',function(req,res){
+router.get('/all',VerifyToken,function(req,res){
 
     UserModel.find({},function(err,result){
         if(err){

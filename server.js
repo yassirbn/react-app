@@ -20,8 +20,8 @@ app.use(bodyParser.json());
 app.use(cors());
 
 app.use("/users",user);
-app.use("/prods",product);
-app.use("/orders",order);
+app.use("/prods",VerifyToken,product);
+app.use("/orders",VerifyToken,order);
 app.use("/categories",category);
 app.post('/file_upload', upload.single("file"), function (req, res) {
 
